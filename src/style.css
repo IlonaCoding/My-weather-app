@@ -1,3 +1,110 @@
-h1 {
-  color: blue;
+html,
+body {
+  overflow: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.card-body {
+  color: black;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?cs=srgb&dl=pexels-brett-sayles-1431822.jpg&fm=jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  z-index: -1000;
+  opacity: 0.6;
+}
+
+.weather-container {
+  color: white;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 236, 210, 0.65) 0%,
+    rgb(252, 182, 159, 0.65) 100%
+  );
+
+  width: 85%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 2px solid #d5f0f5;
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+
+#searchButton {
+  background-color: #abadd6;
+}
+#geoLocationButton {
+  background-color: #abadd6;
+}
+
+.currentWeather {
+  background-color: rgb(245, 150, 148, 0.3);
+}
+
+.units {
+  position: relative;
+  top: -3px;
+}
+
+#celsiusButton {
+  color: black;
+  text-decoration: none;
+}
+
+#fahrenheitButton {
+  color: black;
+  text-decoration: none;
+}
+
+.weatherDetails {
+  background-color: rgb(250, 183, 167, 0.4);
+}
+
+#mainWeatherIcon {
+  display: block;
+  margin: 0 auto;
+}
+.span01 {
+  padding-top: 15px;
+}
+
+hr {
+  color: #abadd6;
+  font-weight: bold;
+}
+.weather-forecast {
+  text-align: center;
+  --bs-gutter-x: 0.5rem;
+}
+.weekdays p {
+  margin: 0px;
+  font-size: 0.8rem;
+}
+
+.weekdays {
+  border: 1px solid white;
+  border-radius: 5%;
+  background-color: rgb(250, 183, 167, 0.2);
+  margin: 0 5px;
+}
+.lastweekday {
+  margin-right: -1px;
+}
+
+.weather-icon {
+  color: #abadd6;
+  padding: 10px 0px;
 }
