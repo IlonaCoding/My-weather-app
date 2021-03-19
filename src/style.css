@@ -8,6 +8,9 @@ ul {
   padding: 0;
   text-align: left;
 }
+footer {
+  text-align: center;
+}
 
 .card-body {
   color: black;
