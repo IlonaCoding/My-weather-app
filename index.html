@@ -14,148 +14,118 @@
 
 <body>
     <div class="background">
-
     </div>
-    <div class="container">
-    <div class="weather-container">
-     <form id="form-all">
-        <div class="input-group">
-            <input id="input" type="text" class="form-control" placeholder="Enter City..."
-                            autocomplete="off">
-            <span class="input-group-btn">
-            <button id="searchButton" class="btn btn-default" type="submit">
-            <i class="fas fa-search" id="search-button-image">
-            </i>
-            </button>
-            <button id="geoLocationButton" class="btn btn-default" type="button">
-            <i class="fas fa-map-marker-alt">
-            </i>
-            </button>
-            </span>
-            </div>
-            </form>
-            <br />
-            <div class="row">
-            <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-            <div class="currentWeather">
-            <div class="card-body">
-            <h1 class="card-title" id=resultCity>Cologne</h1>
-            <div class="row test">
-                <div class="col-6 test2">
-            <ul> <small>
-            <li id=dayTime>
-                        Sunday 18 : 40
-            </li>
-            <li id=weatherDescription>
-            Cloudy
-            </li>
-            </small>
-            </ul>
-
-           
-           <strong id=resultTemperature>13</strong>
-           <span class="units"><a href="#" id=celsiusButton> °C</a> |<a href="#" id=fahrenheitButton> °F</a>  
-        </span>
-        
-            
-            </div>
-            <div class="col-6 test3">
-            <i class="fas fa-cloud-sun fa-4x weather-icon" id=mainWeatherIcon></i>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-            <div class="card weatherDetails">
-            <img>
-                            <i class="fas fa-cloud-sun fa-4x weather-icon" id=mainWeatherIcon></i>
-                            <div class="clearfix">
-                                <div class="card-body">
-                                    <div class="float-left">
-                                        <ul>
-                                            <li>
-                                                Humidity: <span id=humidity></span>%
-                                            </li>
-                                            <li>
-                                                Wind: <span id=wind></span> km/h
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                    <span class="span01"></span>
-                    <hr />
-
-                    <div class="row weather-forecast">
-                        <div class="col-sm weekdays">
-                            <p><strong>Wed</strong></p>
-                            <i class="fas fa-cloud-rain fa-2x weather-icon"></i>
-                            <p>
-                                15° | 5°
-                            </p>
-                        </div>
-                        <div class="col-sm weekdays">
-                            <p><strong>Thu</strong></p>
-                            <i class="fas fa-cloud-sun fa-2x weather-icon"></i>
-                            <p>
-                                18° | 9°
-                            </p>
-                        </div>
-                        <div class="col-sm weekdays">
-                            <p><strong>Fri</strong></p>
-                            <i class="fas fa-cloud-sun-rain fa-2x weather-icon"></i>
-                            <p>
-                                14° | 6°
-                            </p>
-                        </div>
-                        <div class="col-sm weekdays">
-                            <p><strong>Sat</strong></p>
-                            <i class="fas fa-sun fa-2x weather-icon"></i>
-                            <p>
-                                16° | 6°
-                            </p>
-                        </div>
-                        <div class="col-sm weekdays">
-                            <p><strong>Sun</strong></p>
-                            <i class="fas fa-snowflake fa-2x weather-icon"></i>
-                            <p>
-                                4° | 0°
-                            </p>
-                        </div>
-                        <div class="col-sm weekdays lastweekday">
-                            <p><strong>Mon</strong></p>
-                            <i class="fas fa-cloud fa-2x weather-icon"></i>
-                            <p>
-                                10° | 5°
-                            </p>
-                        </div>
-
-                    </div>
+    <div class="container weather-container">
+        <div class="row block1">
+            <form id="form-all">
+                <div class="input-group">
+                    <input id="input" type="text" class="form-control" placeholder="Enter City..." autocomplete="off">
+                    <span class="input-group-btn ">
+                        <button id="searchButton" class="btn btn-default" type="submit">
+                            <i class="fas fa-search" id="search-button-image">
+                            </i>
+                        </button>
+                        <button id="geoLocationButton" class="btn btn-default" type="button">
+                            <i class="fas fa-map-marker-alt">
+                            </i>
+                        </button>
+                    </span>
                 </div>
-               
-</div>
-</div>
-  <footer>    
-<small>
+            </form>
+        </div>
 
-    <a href="https://github.com/IlonaCoding/My-weather-app" target="_blank">Open-source code
-    </a> by Ilona Gantert
+        <h1 id=resultCity>Cologne
+        </h1>
 
-</small>
-</footer>
+        <ul> <small>
+
+                <li id=dayTime>
+                    Tuesday 18 : 40
+                </li>
+
+            </small>
+        </ul>
+
+        <div class="row  weatherToday block2">
+            <div class="col-6 col-sm-6 col-lg-6 col-xl-6 test1">
+                <ul>
+                    <li id=weatherDescription>
+                        Cloudy
+                    </li>
+                    <li>
+
+                        <strong id=resultTemperature>13</strong>
+
+                        <span class="units"><a href="#" id=celsiusButton> °C</a> |<a href="#" id=fahrenheitButton>
+                                °F</a>
+                        </span>
+
+                    </li>
+                </ul>
 
 
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg">
+                <div class="weatherDetails">
+                    <small>
+                        <ul>
+                            <li>
+                                Humidity: <span id=humidity> 68 </span>%
+                            </li>
+                            <li>
+                                Wind: <span id=wind> 10</span> km/h
+                            </li>
+                            <li>
+                                Cloudiness: <span id=cloudiness>47</span> %
+                            </li>
+
+
+                        </ul>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row weather-forecast block3">
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>11:00</p>
+                <i class="fas fa-cloud-rain fa-2x weather-icon"></i>
+                <p>15°</p>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>14:00</p>
+                <i class="fas fa-cloud-sun fa-2x weather-icon"></i>
+                <p>16°</p>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>17:00</p>
+                <i class="fas fa-cloud-sun-rain fa-2x weather-icon"></i>
+                <p>12°</p>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>20:00</p>
+                <i class="fas fa-sun fa-2x weather-icon"></i>
+                <p>12°</p>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>23:00</p>
+                <i class="fas fa-snowflake fa-2x weather-icon"></i>
+                <p>11°</p>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg timeslot">
+                <p>02:00</p>
+                <i class="fas fa-cloud weather-icon"></i>
+                <p>9°</p>
+            </div>
+
+
+        </div>
+    </div>
+    <footer><small>Open-Source Code by Ilona Gantert</small></footer>
     <script src="src/script.js"></script>
-
 </body>
 
 </html>

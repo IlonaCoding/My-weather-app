@@ -7,15 +7,11 @@ let description= response.data.weather[0].main;
 let currentHumidity=Math.round(response.data.main.humidity);
 let currentWind=Math.round(response.data.wind.speed);
 
-
-
 resultCity.innerHTML=`${city}`;
 resultTemperature.innerHTML=`${temperature}`;
 weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
-
-
 }
 
 
@@ -87,7 +83,7 @@ if (minutes <10){
     minutes=`0${minutes}`;
 }
 let dayAndTime= document.querySelector("#dayTime");
-dayAndTime.innerHTML=`${days[dayIndex]} ${hours} : ${minutes}`;
+dayAndTime.innerHTML=`${days[dayIndex]} ${hours}:${minutes}`;
 
 //Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
 

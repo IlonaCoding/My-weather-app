@@ -1,28 +1,59 @@
 html,
 body {
   overflow: auto;
-  color: #878787;
+  color: #393e5b;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 
 h1 {
-  color: #878787;
   font-weight: 500;
+  margin-top: 8px;
   margin-bottom: 0;
 }
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left;
 }
 
 footer {
   text-align: center;
+  color: #393e5b;
 }
-.card-title {
+
+.block1 {
+  background-color: transparent;
 }
-.card-body {
-  color: black;
+.block2 {
+  background-color: rgba(255, 96, 83, 0.7);
+  color: #393e5b;
+  padding: 0px;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.block3 {
+  padding: 0px;
+  background-color: rgba(255, 169, 87, 0.7);
+  color: #393e5b;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.weather-container {
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 2px solid;
+  border-color: #393e5b;
+  padding: 30px 20px;
+  border-radius: 0.25rem;
+  background-color: rgba(237, 230, 203, 0.3);
 }
 
 .background {
@@ -37,91 +68,79 @@ footer {
   opacity: 0.6;
 }
 
-.weather-container {
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 236, 210, 0.65) 0%,
-    rgb(252, 182, 159, 0.65) 100%
-  );
-  width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  border: 2px solid #d5f0f5;
-  padding: 30px 20px;
-  border-radius: 20px;
+input#input.form-control {
+  border-radius: 0.25rem;
 }
 
 #searchButton {
-  background-color: #abadd6;
+  background-color: #ff6053;
+  color: #ede6cb;
+  position: relative;
+  left: 5px;
 }
 #geoLocationButton {
-  background-color: #abadd6;
+  background-color: #ffa957;
+  color: #ede6cb;
+  position: relative;
+  left: 4px;
+}
+.weatherToday {
+  margin-top: 15px;
 }
 
-.currentWeather {
-  background-color: rgb(245, 150, 148, 0.3);
+#weatherDescription {
+  font-size: 25px;
 }
-
 #resultTemperature {
-  line-heights: 1;
   font-size: 41px;
   font-weight: 400;
 }
 
 .units {
   position: relative;
-  top: 0px;
+  top: -18px;
   font-size: 14px;
 }
 
 #celsiusButton {
-  color: black;
+  color: #393e5b;
   text-decoration: none;
 }
 
 #fahrenheitButton {
-  color: black;
+  color: #393e5b;
   text-decoration: none;
 }
 
 .weatherDetails {
-  background-color: rgb(250, 183, 167, 0.4);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-#mainWeatherIcon {
-  display: block;
-  margin: 0 auto;
-}
-.span01 {
-  padding-top: 15px;
-}
-
-hr {
-  color: #abadd6;
-  font-weight: bold;
-}
 .weather-forecast {
   text-align: center;
-  --bs-gutter-x: 0.5rem;
+  margin-top: 20px;
 }
-.weekdays p {
+.timeslot p {
   margin: 0px;
   font-size: 0.8rem;
 }
 
-.weekdays {
-  border: 1px solid white;
+.timeslot {
   border-radius: 5%;
-  background-color: rgb(250, 183, 167, 0.2);
-  margin: 0 5px;
+  border-style: solid;
+  border-color: transparent;
+  margin: 0px;
 }
-.lastweekday {
-  margin-right: -1px;
+.mainWeatherIcon {
+  color: #ede6cb;
+  font-size: 1em;
+  margin-left: 15px;
 }
 
 .weather-icon {
-  color: #abadd6;
-  padding: 10px 0px;
+  color: #ede6cb;
+  padding: 5px 0px;
+  font-size: 1.5em;
 }
