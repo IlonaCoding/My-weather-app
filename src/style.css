@@ -90,6 +90,7 @@ input#input.form-control {
 
 #weatherDescription {
   font-size: 25px;
+  text-transform: capitalize;
 }
 #resultTemperature {
   font-size: 41px;
@@ -135,7 +136,7 @@ input#input.form-control {
 }
 .mainWeatherIcon {
   color: #ede6cb;
-  font-size: 1em;
+  font-size: 2em;
   margin-left: 15px;
 }
 
