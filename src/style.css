@@ -115,7 +115,7 @@ input#input.form-control {
 }
 
 .Flexbox2 {
-  border: 2px dotted green;
+  border: 2px dotted transparent;
   margin: 0;
  margin-top: 5px;;
   padding: 0;
