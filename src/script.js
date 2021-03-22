@@ -1,4 +1,6 @@
 
+
+
 function displayWeather(response){
 
 let temperature = Math.round(response.data.main.temp);
@@ -7,6 +9,7 @@ let description= response.data.weather[0].description;
 let currentHumidity=Math.round(response.data.main.humidity);
 let currentWind=Math.round(response.data.wind.speed);
 let currentClouds=Math.round(response.data.clouds.all);
+let date=document.querySelector("#dayTime");
 let icon = document.querySelector("#icon");
 
 celsiusTemperature =Math.round(response.data.main.temp);
@@ -17,6 +20,7 @@ weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
 cloudiness.innerHTML=`${currentClouds}`;
+
 icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -25,11 +29,16 @@ icon.setAttribute(
 }
 
 
+
+
+
+
 function search(city){
     let apiKey = "fb4401bc73166e18f425a0d73e599b8e";
      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
      axios.get(apiUrl).then(displayWeather);
+
 
 }
 
@@ -41,6 +50,7 @@ function handleSubmit(event) {
 }
 
 function displayWeather02(response) {
+
  
 let currentLocation = response.data.list[0].name;
 let temperatureCurrentLocation = Math.round(response.data.list[0].main.temp);
@@ -48,6 +58,8 @@ let description= response.data.list[0].weather[0].description;
 let currentHumidity=Math.round(response.data.list[0].main.humidity);
 let currentWind=Math.round(response.data.list[0].wind.speed);
 let currentClouds=Math.round(response.data.list[0].clouds.all);
+let icon = document.querySelector("#icon");
+
 
 resultCity.innerHTML=`${currentLocation}`;
 resultTemperature.innerHTML=`${temperatureCurrentLocation}`;
@@ -55,23 +67,20 @@ weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
 cloudiness.innerHTML=`${currentClouds}`;
+icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.list[0].weather[0].description);
+}
 
-let now = new Date();
-let days =["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
-let dayIndex = now.getDay();
 
-let hours = now.getHours();
-if (hours <10){
-    hours=`0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes <10){
-    minutes=`0${minutes}`;
-}
-let dayAndTime= document.querySelector("#dayTime");
-console.log(dayAndTime);
-dayAndTime.innerHTML=`${days[dayIndex]} ${hours}:${minutes}`;
-}
+
+
+
+
+
+
 
 
 function searchLocation(pos) {
@@ -119,7 +128,7 @@ if (minutes <10){
     minutes=`0${minutes}`;
 }
 let dayAndTime= document.querySelector("#dayTime");
-console.log(dayAndTime);
+
 dayAndTime.innerHTML=`${days[dayIndex]} ${hours}:${minutes}`;
 
 
