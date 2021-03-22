@@ -1,24 +1,32 @@
 
 function displayWeather(response){
-    console.log(response);
+
 let temperature = Math.round(response.data.main.temp);
 let city = response.data.name; 
 let description= response.data.weather[0].description;
 let currentHumidity=Math.round(response.data.main.humidity);
 let currentWind=Math.round(response.data.wind.speed);
+let currentClouds=Math.round(response.data.clouds.all);
+let icon = document.querySelector("#icon");
 
 resultCity.innerHTML=`${city}`;
 resultTemperature.innerHTML=`${temperature}`;
 weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
+cloudiness.innerHTML=`${currentClouds}`;
+icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 
 function search(city){
     let apiKey = "fb4401bc73166e18f425a0d73e599b8e";
      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+
      axios.get(apiUrl).then(displayWeather);
 
 }
@@ -31,10 +39,20 @@ function handleSubmit(event) {
 }
 
 function displayWeather02(response) {
+ 
 let currentLocation = response.data.list[0].name;
-  let temperatureCurrentLocation = Math.round(response.data.list[0].main.temp);
-  resultCity.innerHTML=`${currentLocation}`;
-  resultTemperature.innerHTML=`${temperatureCurrentLocation}`;
+let temperatureCurrentLocation = Math.round(response.data.list[0].main.temp);
+let description= response.data.list[0].weather[0].description;
+let currentHumidity=Math.round(response.data.list[0].main.humidity);
+let currentWind=Math.round(response.data.list[0].wind.speed);
+let currentClouds=Math.round(response.data.list[0].clouds.all);
+
+resultCity.innerHTML=`${currentLocation}`;
+resultTemperature.innerHTML=`${temperatureCurrentLocation}`;
+weatherDescription.innerHTML=`${description}`;
+humidity.innerHTML=`${currentHumidity}`;
+wind.innerHTML=`${currentWind}`;
+cloudiness.innerHTML=`${currentClouds}`;
 }
 
 
