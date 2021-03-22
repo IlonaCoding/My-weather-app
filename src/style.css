@@ -26,7 +26,7 @@ footer {
   background-color: transparent;
 }
 .block2 {
-  background-color: rgba(255, 96, 83, 0.7);
+  background-color: rgba(255, 96, 83, 0.6);
   color: #393e5b;
   padding: 0px;
   border-radius: 0.25rem;
@@ -37,7 +37,7 @@ footer {
 
 .block3 {
   padding: 0px;
-  background-color: rgba(255, 169, 87, 0.7);
+  background-color: rgba(255, 169, 87, 0.6);
   color: #393e5b;
   border-radius: 0.25rem;
   border-style: solid;
@@ -74,13 +74,13 @@ input#input.form-control {
 }
 
 #searchButton {
-  background-color: #ff6053;
+  background-color: rgba(255, 96, 83, 0.8);
   color: #ede6cb;
   position: relative;
   left: 5px;
 }
 #geoLocationButton {
-  background-color: #ffa957;
+  background-color: rgba(255, 169, 87, 0.8);
   color: #ede6cb;
   position: relative;
   left: 4px;
@@ -102,8 +102,8 @@ input#input.form-control {
 
 .Flexbox1 li {
   border: 1px solid transparent;
-  margin: 0em;
-  padding: 0.5em;
+  margin: 0;
+  padding: 0;
 }
 
 .flexCurrentTemperature {
@@ -123,14 +123,14 @@ input#input.form-control {
   flex-direction: row;
   flex-wrap:wrap;
   justify-content: center;
-  align-items:flex-end;
+  align-items:center;
   
     
 }
 .Flexbox2Element{
   border: 1px solid transparent;
  padding:0.1em;
- margin:0.1em;
+ margin:0em;
  
 }
 .flex2MainWeatherInfo {
@@ -169,6 +169,7 @@ flex:1 1 3em;
 #weatherDescription {
   font-size: 25px;
   text-transform: capitalize;
+  margin:0;
 }
 #resultTemperature {
   font-size: 41px;
@@ -184,16 +185,12 @@ flex:1 1 3em;
 
 
 
-#celsiusButton {
-  
-  
+#celsiusButton { 
   text-decoration: none;
-   
 }
 
 #fahrenheitButton {
-  
-  text-decoration: none;
+    text-decoration: none;
 }
 
 
@@ -202,7 +199,6 @@ flex:1 1 3em;
   cursor:default;
   
 }
-
 
 .active:hover{
   text-decoration: none;
@@ -231,10 +227,7 @@ flex:1 1 3em;
   border-color: transparent;
   margin: 0px;
 }
-.mainWeatherIcon {
-  color: #ede6cb;
-  font-size: 3em;
-}
+
 
 .weather-icon {
   color: #ede6cb;
