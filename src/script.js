@@ -9,8 +9,10 @@ let currentWind=Math.round(response.data.wind.speed);
 let currentClouds=Math.round(response.data.clouds.all);
 let icon = document.querySelector("#icon");
 
+celsiusTemperature =Math.round(response.data.main.temp);
+
 resultCity.innerHTML=`${city}`;
-resultTemperature.innerHTML=`${temperature}`;
+resultTemperature.innerHTML=`${celsiusTemperature}`;
 weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
@@ -53,6 +55,22 @@ weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
 cloudiness.innerHTML=`${currentClouds}`;
+
+let now = new Date();
+let days =["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let dayIndex = now.getDay();
+
+let hours = now.getHours();
+if (hours <10){
+    hours=`0${hours}`;
+}
+let minutes = now.getMinutes();
+if (minutes <10){
+    minutes=`0${minutes}`;
+}
+let dayAndTime= document.querySelector("#dayTime");
+console.log(dayAndTime);
+dayAndTime.innerHTML=`${days[dayIndex]} ${hours}:${minutes}`;
 }
 
 
@@ -75,19 +93,19 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 function convertToFahrenheit(event){
 event.preventDefault();
 let temperatureElement =document.querySelector("#resultTemperature");
-let temperature=temperatureElement.innerHTML;
-temperature =Number(temperature);
- temperatureElement.innerHTML = Math.round((temperature* 9) / 5 + 32);
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+temperatureElement.innerHTML = Math.round((celsiusTemperature* 9) / 5 + 32);
 }
 function convertToCelsius(event){
 event.preventDefault();
 let temperatureElement =document.querySelector("#resultTemperature");
-let temperature=temperatureElement.innerHTML;
-temperature =Number(temperature);
- temperatureElement.innerHTML = Math.round((temperature-32)*5/9);
+celsiusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
+ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-//In your project, display the current date and time using JavaScript: Tuesday 16:00
+
 let now = new Date();
 let days =["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
 let dayIndex = now.getDay();
@@ -101,19 +119,21 @@ if (minutes <10){
     minutes=`0${minutes}`;
 }
 let dayAndTime= document.querySelector("#dayTime");
+console.log(dayAndTime);
 dayAndTime.innerHTML=`${days[dayIndex]} ${hours}:${minutes}`;
 
-//Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
-
-let fahrenheitButton = document.querySelector("#fahrenheitButton");
-fahrenheitButton.addEventListener("click",convertToFahrenheit);
-
-let celsiusButton = document.querySelector("#celsiusButton");
-celsiusButton.addEventListener("click",convertToCelsius);
 
 
+let fahrenheitLink = document.querySelector("#fahrenheitButton");
+fahrenheitLink.addEventListener("click",convertToFahrenheit);
 
-//Homewoork Week 5: On your project, when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
+let celsiusLink = document.querySelector("#celsiusButton");
+celsiusLink.addEventListener("click",convertToCelsius);
+
+
+
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#form-all");
 form.addEventListener("submit", handleSubmit);
