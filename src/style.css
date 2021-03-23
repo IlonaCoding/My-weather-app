@@ -171,7 +171,7 @@ flex:1 1 3em;
   text-transform: capitalize;
   margin:0;
 }
-#resultTemperature {
+.resultTemperature {
   font-size: 41px;
   font-weight: 400;
 }
@@ -216,6 +216,13 @@ flex:1 1 3em;
   margin:0;
   margin-top: 10px;
 }
+
+.timeslot img{
+display: block;
+  margin: 0 auto;
+ 
+}
+
 .timeslot p {
   margin: 0px;
   font-size: 0.8rem;
@@ -232,5 +239,5 @@ flex:1 1 3em;
 .weather-icon {
   color: #ede6cb;
   padding: 5px 0px;
-  font-size: 1.5em;
+  font-size: 1em;
 }
