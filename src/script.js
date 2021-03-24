@@ -121,10 +121,10 @@ for (let index =0; index < 4; index++){
   let forecast = response.data.list[index];
  
   let time = response.data.list[index].dt;
-  let id= "resultForecastTemperature"+[index];
+ 
  
   celsiusTemperatureForecast = Math.round(response.data.list[index].main.temp);
-console.log(celsiusTemperatureForecast);
+
  forecastElement.innerHTML += `
 <div class="col-3 col-sm-3 col-md-3 col-lg timeslot">
          
@@ -133,17 +133,19 @@ console.log(celsiusTemperatureForecast);
     <img class="forecast-image"
       src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="weather-icon"/>
           
-      <p id="${id}">${Math.round(forecast.main.temp)}°</p>
+      <p>${Math.round(forecast.main.temp)}°</p>
                 </div>`;
 } 
 }
 
 function convertToFahrenheit(event){
-  event.preventDefault();
+  
+event.preventDefault();
 let temperatureElement =document.querySelector("#resultTemperature");
 celsiusLink.classList.remove("active");
 fahrenheitLink.classList.add("active");
-temperatureElement.innerHTML = Math.round((temperatureForecastElement* 9) / 5 + 32);
+temperatureElement.innerHTML = Math.round((celsiusTemperature* 9) / 5 + 32);
+
 }
 
 
@@ -180,7 +182,7 @@ let temperatureForecastElement=document.querySelector("#resultForecastTemperatur
 
 
 let celsiusTemperature = null;
-
+let celsiusTemperatureForecast = null;
 
 let form = document.querySelector("#form-all");
 form.addEventListener("submit", handleSubmit);
