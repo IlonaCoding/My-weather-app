@@ -44,7 +44,7 @@ footer {
 }
 
 .weather-container {
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -75,13 +75,16 @@ input#input.form-control {
   background-color: rgba(255, 96, 83, 0.8);
   color: #ede6cb;
   position: relative;
-  left: 5px;
+  left: 3px;
+ 
+  
 }
 #geoLocationButton {
   background-color: rgba(255, 169, 87, 0.8);
   color: #ede6cb;
   position: relative;
-  left: 4px;
+  left: 0px;
+  
 }
 .weatherToday {
   margin-top: 15px;
@@ -155,26 +158,6 @@ input#input.form-control {
   text-align: center;
 }
 
-.Flexbox4 ul {
-  border: 1px solid red;
-}
-
-.Flexbox5 ul {
-  border: 1px solid green;
-   padding: 0;
-  margin: 0;
-   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-   
-}
-.Flexbox5 li {
-  border: 1px solid yellow;
-  padding: 0em;
-  margin: 0em;
-  text-align: center;
-  margin-right: 10px;
-}
 
   #weatherDescription {
     font-size: 25px;

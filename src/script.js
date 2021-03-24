@@ -1,4 +1,3 @@
-
 function currentDate(timestamp){
 let now = new Date(timestamp);
 let days =["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -120,7 +119,12 @@ forecastElement.innerHTML=null;
  
 for (let index =0; index < 4; index++){
   let forecast = response.data.list[index];
+ 
   let time = response.data.list[index].dt;
+  let id= "resultForecastTemperature"+[index];
+ 
+  celsiusTemperatureForecast = Math.round(response.data.list[index].main.temp);
+console.log(celsiusTemperatureForecast);
  forecastElement.innerHTML += `
 <div class="col-3 col-sm-3 col-md-3 col-lg timeslot">
          
@@ -129,11 +133,19 @@ for (let index =0; index < 4; index++){
     <img class="forecast-image"
       src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="weather-icon"/>
           
-      <p #resultTemperature>${Math.round(forecast.main.temp)}°</p>
-
+      <p id="${id}">${Math.round(forecast.main.temp)}°</p>
                 </div>`;
 } 
 }
+
+function convertToFahrenheit(event){
+  event.preventDefault();
+let temperatureElement =document.querySelector("#resultTemperature");
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+temperatureElement.innerHTML = Math.round((temperatureForecastElement* 9) / 5 + 32);
+}
+
 
 
 
@@ -154,13 +166,6 @@ function handleSubmit(event) {
 }
 
 
-function convertToFahrenheit(event){
-event.preventDefault();
-let temperatureElement =document.querySelector("#resultTemperature");
-celsiusLink.classList.remove("active");
-fahrenheitLink.classList.add("active");
-temperatureElement.innerHTML = Math.round((celsiusTemperature* 9) / 5 + 32);
-}
 
 
 function convertToCelsius(event){
@@ -168,11 +173,14 @@ event.preventDefault();
 celsiusLink.classList.add("active");
 fahrenheitLink.classList.remove("active");
 let temperatureElement =document.querySelector("#resultTemperature");
+let temperatureForecastElement=document.querySelector("#resultForecastTemperature");
  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+ temperatureForecastElement.innerHTML = celsiusTemperatureForecast;
 }
 
 
 let celsiusTemperature = null;
+
 
 let form = document.querySelector("#form-all");
 form.addEventListener("submit", handleSubmit);
@@ -189,9 +197,6 @@ celsiusLink.addEventListener("click",convertToCelsius);
 
 
 search("Köln");
-
-
-
 
 
 
