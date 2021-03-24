@@ -32,7 +32,7 @@ function formatHours(timestamp) {
 
 
 function displayWeatherGeolocation(response) {
-  console.log(response);
+ 
 
  let currentLocation = response.data.list[0].name;
 let temperatureCurrentLocation = Math.round(response.data.list[0].main.temp);
@@ -65,7 +65,13 @@ function searchLocation(pos) {
   let apiKey = "fb4401bc73166e18f425a0d73e599b8e";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/find";
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayWeatherGeolocation);
+    axios.get(apiUrl).then(displayWeatherGeolocation)
+  let apiEndpointForecast = "https://api.openweathermap.org/data/2.5/forecast";
+
+
+     apiUrlForecast= `${apiEndpointForecast}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+console.log(apiUrlForecast);
+     axios.get(apiUrlForecast).then(displayForecast);;
 
     
 }
@@ -79,6 +85,7 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 function displayWeather(response){
   console.log(response);
+  
 
 let city = response.data.name; 
 let description= response.data.weather[0].description;
@@ -111,22 +118,21 @@ function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML=null;
  
-
-
 for (let index =0; index < 4; index++){
   let forecast = response.data.list[index];
   let time = response.data.list[index].dt;
  forecastElement.innerHTML += `
 <div class="col-3 col-sm-3 col-md-3 col-lg timeslot">
-                <p>${formatHours(time*1000)}</p>
-                <img
-                src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="weather-icon"/>
-                <p #resultTemperature>${Math.round(forecast.main.temp)}°</p>
-            </div>
-`;
+         
+    <p>${formatHours(time*1000)}</p>
+  
+    <img class="forecast-image"
+      src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="weather-icon"/>
+          
+      <p #resultTemperature>${Math.round(forecast.main.temp)}°</p>
 
+                </div>`;
 } 
-
 }
 
 

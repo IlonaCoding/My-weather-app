@@ -32,7 +32,6 @@ footer {
   border-radius: 0.25rem;
   border-style: solid;
   border-color: transparent;
-   
 }
 
 .block3 {
@@ -54,7 +53,6 @@ footer {
   border-color: #393e5b;
   padding: 30px 20px;
   border-radius: 0.25rem;
-  
 }
 
 .background {
@@ -117,95 +115,102 @@ input#input.form-control {
 .Flexbox2 {
   border: 2px dotted transparent;
   margin: 0;
- margin-top: 5px;;
+  margin-top: 5px;
   padding: 0;
-  display:flex;
+  display: flex;
   flex-direction: row;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items:center;
-  
-    
+  align-items: center;
 }
-.Flexbox2Element{
+.Flexbox2Element {
   border: 1px solid transparent;
- padding:0.1em;
- margin:0em;
- 
+  padding: 0.1em;
+  margin: 0em;
 }
 .flex2MainWeatherInfo {
-  order:1;
-  flex:1 1 12em;
+  order: 1;
+  flex: 1 1 12em;
 }
-
 
 .flex2WeatherDetails {
-order:2;
-flex:1 1 3em;
+  order: 2;
+  flex: 1 1 3em;
 }
 
-.Flexbox3 ul{
+.Flexbox3 ul {
   border: 1px solid transparent;
-  padding:0;
-  margin:0;
-  display:flex;
+  padding: 0;
+  margin: 0;
+  display: flex;
   flex-direction: column;
-  flex-wrap:wrap;
- 
+  flex-wrap: wrap;
+
   justify-content: center;
- 
-  
-
 }
-.Flexbox3 li{
+.Flexbox3 li {
   border: 1px solid transparent;
-  padding:0.1em;
- margin:0.1em;
- text-align: center;
-
-
+  padding: 0.1em;
+  margin: 0.1em;
+  text-align: center;
 }
 
-#weatherDescription {
-  font-size: 25px;
-  text-transform: capitalize;
-  margin:0;
-}
-.resultTemperature {
-  font-size: 41px;
-  font-weight: 400;
+.Flexbox4 ul {
+  border: 1px solid red;
 }
 
-.units {
-  position: relative;
-  top: -18px;
-  font-size: 14px;
- 
+.Flexbox5 ul {
+  border: 1px solid green;
+   padding: 0;
+  margin: 0;
+   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+   
+}
+.Flexbox5 li {
+  border: 1px solid yellow;
+  padding: 0em;
+  margin: 0em;
+  text-align: center;
+  margin-right: 10px;
 }
 
+  #weatherDescription {
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: 0;
+  }
+  .resultTemperature {
+    font-size: 41px;
+    font-weight: 400;
+  }
 
+  .units {
+    position: relative;
+    top: -18px;
+    font-size: 14px;
+  }
 
-#celsiusButton { 
-  text-decoration: none;
-}
-
-#fahrenheitButton {
+  #celsiusButton {
     text-decoration: none;
-}
+  }
 
+  #fahrenheitButton {
+    text-decoration: none;
+  }
 
-.active{
-  color:rgba(57, 62, 91, 1);
-  cursor:default;
-  
-}
+  .active {
+    color: rgba(57, 62, 91, 1);
+    cursor: default;
+  }
 
-.active:hover{
-  text-decoration: none;
-  color:rgba(57, 62, 91, 1);
-}
+  .active:hover {
+    text-decoration: none;
+    color: rgba(57, 62, 91, 1);
+  }
 
-//.weatherDetails {
+  //.weatherDetails {
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -213,31 +218,42 @@ flex:1 1 3em;
 
 .weather-forecast {
   text-align: center;
-  margin:0;
+  margin: 0;
   margin-top: 10px;
 }
 
-.timeslot img{
-display: block;
+.timeslot img {
+  display: block;
   margin: 0 auto;
+  width: ;
+}
+
+.mainWeatherIcon{
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 5em;
+
+}
+.forecast-image {
+ display:block;
+ margin: 0 auto;
+  width: 3em;
+  border: 1px solid transparent;
+ 
  
 }
 
+.timeslot{
+  text-align: center;
+  border: 1px solid transparent;
+}
+
 .timeslot p {
-  margin: 0px;
-  font-size: 0.8rem;
-}
-
-.timeslot {
-  border-radius: 5%;
-  border-style: solid;
-  border-color: transparent;
-  margin: 0px;
+margin:0;
+  font-size: 0.8em;
 }
 
 
-.weather-icon {
-  color: #ede6cb;
-  padding: 5px 0px;
-  font-size: 1em;
-}
+
+
