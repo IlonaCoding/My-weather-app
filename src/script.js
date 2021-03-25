@@ -119,12 +119,8 @@ forecastElement.innerHTML=null;
  
 for (let index =0; index < 4; index++){
   let forecast = response.data.list[index];
- 
-  let time = response.data.list[index].dt;
- 
- 
+   let time = response.data.list[index].dt;
   celsiusTemperatureForecast = Math.round(response.data.list[index].main.temp);
-
  forecastElement.innerHTML += `
 <div class="col-3 col-sm-3 col-md-3 col-lg timeslot">
          

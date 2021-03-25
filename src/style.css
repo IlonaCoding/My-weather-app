@@ -221,7 +221,7 @@ input#input.form-control {
 .forecast-image {
  display:block;
  margin: 0 auto;
-  width: 3em;
+  width: 100%;
   border: 1px solid transparent;
  
  
