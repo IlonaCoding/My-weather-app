@@ -1,15 +1,15 @@
 function currentDate(timestamp){
 let now = new Date(timestamp);
+
 let days =["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
 let dayIndex = now.getDay();
 let date =now.getDate();
 let year = now.getFullYear();
-let month= now.getMonth();
-
-
+let months=["1","2","3","4","5","6","7","8","9","10","11","12",]
+let monthIndex =now.getMonth();
 
 let dayAndTime= document.querySelector("#dayTime");
-dayAndTime.innerHTML=`${days[dayIndex]} ${date}.${month}.${year} ${formatHours(timestamp)}`;
+dayAndTime.innerHTML=`${days[dayIndex]} ${date}.${months[monthIndex]}.${year} ${formatHours(timestamp)}`;
 
 }
 
@@ -34,15 +34,17 @@ function displayWeatherGeolocation(response) {
  
 
  let currentLocation = response.data.list[0].name;
-let temperatureCurrentLocation = Math.round(response.data.list[0].main.temp);
+
 let description= response.data.list[0].weather[0].description;
 let currentHumidity=Math.round(response.data.list[0].main.humidity);
 let currentWind=Math.round(response.data.list[0].wind.speed);
 let currentClouds=Math.round(response.data.list[0].clouds.all);
 let icon = document.querySelector("#icon");
 
+celsiusTemperature =Math.round(response.data.list[0].main.temp);
+
 resultCity.innerHTML=`${currentLocation}`;
-resultTemperature.innerHTML=`${temperatureCurrentLocation}`;
+resultTemperature.innerHTML=`${celsiusTemperature}`;
 weatherDescription.innerHTML=`${description}`;
 humidity.innerHTML=`${currentHumidity}`;
 wind.innerHTML=`${currentWind}`;
@@ -134,18 +136,6 @@ for (let index =0; index < 4; index++){
 } 
 }
 
-function convertToFahrenheit(event){
-  
-event.preventDefault();
-let temperatureElement =document.querySelector("#resultTemperature");
-celsiusLink.classList.remove("active");
-fahrenheitLink.classList.add("active");
-temperatureElement.innerHTML = Math.round((celsiusTemperature* 9) / 5 + 32);
-
-}
-
-
-
 
 function search(city){
     let apiKey = "fb4401bc73166e18f425a0d73e599b8e";
@@ -163,7 +153,15 @@ function handleSubmit(event) {
    search(city);      
 }
 
+function convertToFahrenheit(event){
+  
+event.preventDefault();
+let temperatureElement =document.querySelector("#resultTemperature");
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+temperatureElement.innerHTML = Math.round((celsiusTemperature* 9) / 5 + 32);
 
+}
 
 
 function convertToCelsius(event){
@@ -171,14 +169,14 @@ event.preventDefault();
 celsiusLink.classList.add("active");
 fahrenheitLink.classList.remove("active");
 let temperatureElement =document.querySelector("#resultTemperature");
-let temperatureForecastElement=document.querySelector("#resultForecastTemperature");
+
  temperatureElement.innerHTML = Math.round(celsiusTemperature);
- temperatureForecastElement.innerHTML = celsiusTemperatureForecast;
+ 
 }
 
 
 let celsiusTemperature = null;
-let celsiusTemperatureForecast = null;
+
 
 let form = document.querySelector("#form-all");
 form.addEventListener("submit", handleSubmit);
