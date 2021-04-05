@@ -22,27 +22,6 @@ footer {
   color: #393e5b;
 }
 
-.block1 {
-  background-color: transparent;
-}
-.block2 {
-  background-color: rgba(255, 96, 83, 0.6);
-  color: #393e5b;
-  padding: 0px;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-color: transparent;
-}
-
-.block3 {
-  padding: 0px;
-  background-color: rgba(255, 169, 87, 0.6);
-  color: #393e5b;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-color: transparent;
-}
-
 .weather-container {
   width: 90%;
   max-width: 600px;
@@ -72,22 +51,16 @@ input#input.form-control {
 }
 
 #searchButton {
-  background-color: rgba(255, 96, 83, 0.8);
+  background-color: rgba(236, 110, 76, 0.8);
   color: #ede6cb;
   position: relative;
   left: 3px;
- 
-  
 }
 #geoLocationButton {
-  background-color: rgba(255, 169, 87, 0.8);
+  background-color: rgba(236, 110, 76, 0.8);
   color: #ede6cb;
   position: relative;
   left: 0px;
-  
-}
-.weatherToday {
-  margin-top: 15px;
 }
 
 .Flexbox1 ul {
@@ -113,10 +86,22 @@ input#input.form-control {
 
 .flexMainIcon {
   order: 2;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 5em;
+}
+
+.weatherToday {
+  margin-top: 15px;
+  background-color: rgba(120, 104, 230, 0.6);
+  color: #393e5b;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
 }
 
 .Flexbox2 {
-  border: 2px dotted transparent;
   margin: 0;
   margin-top: 5px;
   padding: 0;
@@ -158,85 +143,74 @@ input#input.form-control {
   text-align: center;
 }
 
+#weatherDescription {
+  font-size: 25px;
+  text-transform: capitalize;
+  margin: 0;
+}
+.resultTemperature {
+  font-size: 41px;
+  font-weight: 400;
+}
 
-  #weatherDescription {
-    font-size: 25px;
-    text-transform: capitalize;
-    margin: 0;
-  }
-  .resultTemperature {
-    font-size: 41px;
-    font-weight: 400;
-  }
+.units {
+  position: relative;
+  top: -18px;
+  font-size: 14px;
+}
 
-  .units {
-    position: relative;
-    top: -18px;
-    font-size: 14px;
-  }
+#celsiusButton {
+  text-decoration: none;
+}
 
-  #celsiusButton {
-    text-decoration: none;
-  }
+#fahrenheitButton {
+  text-decoration: none;
+}
 
-  #fahrenheitButton {
-    text-decoration: none;
-  }
+.active {
+  color: rgba(57, 62, 91, 1);
+  cursor: default;
+}
 
-  .active {
-    color: rgba(57, 62, 91, 1);
-    cursor: default;
-  }
+.active:hover {
+  text-decoration: none;
+  color: rgba(57, 62, 91, 1);
+}
 
-  .active:hover {
-    text-decoration: none;
-    color: rgba(57, 62, 91, 1);
-  }
-
-  //.weatherDetails {
+.Description-Forecast {
+  background-color: rgba(120, 104, 230, 0.6);
+  color: #ede6cb;
   text-align: center;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: -0.9em;
+  border-radius: 0.25rem;
 }
 
 .weather-forecast {
   text-align: center;
   margin: 0;
-  margin-top: 10px;
+  padding: 0px;
+  background-color: rgba(184, 181, 255, 0.5);
+  color: #393e5b;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
 }
 
-.timeslot img {
-  display: block;
-  margin: 0 auto;
-  width: ;
-}
-
-.mainWeatherIcon{
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 5em;
-
-}
 .forecast-image {
- display:block;
- margin: 0 auto;
+  display: block;
+  margin: 0 auto;
   width: 3em;
   border: 1px solid transparent;
- 
- 
 }
 
-.timeslot{
+.timeslot {
   text-align: center;
-  border: 1px solid transparent;
+  border: 1px solid rgba(120, 104, 230, 0.1);
+  border-radius: 0.25rem;
 }
 
 .timeslot p {
-margin:0;
-  font-size: 0.8em;
+  margin: 0;
+  font-size: 0.7em;
 }
-
-
-
-
