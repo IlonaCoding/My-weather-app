@@ -51,13 +51,13 @@ input#input.form-control {
 }
 
 #searchButton {
-  background-color: rgba(236, 110, 76, 0.8);
+  background-color: rgba(236, 110, 76, 1);
   color: #ede6cb;
   position: relative;
   left: 3px;
 }
 #geoLocationButton {
-  background-color: rgba(236, 110, 76, 0.8);
+  background-color: rgba(236, 110, 76, 1);
   color: #ede6cb;
   position: relative;
   left: 0px;
@@ -197,6 +197,16 @@ input#input.form-control {
   border-color: transparent;
 }
 
+.weather-day-forecast {
+  margin: 0;
+  padding: 0px;
+  background-color: rgba(184, 181, 255, 0.5);
+  color: #393e5b;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
+}
+
 .forecast-image {
   display: block;
   margin: 0 auto;
@@ -213,4 +223,12 @@ input#input.form-control {
 .timeslot p {
   margin: 0;
   font-size: 0.7em;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-max {
+  font-size: 1.1em;
 }
