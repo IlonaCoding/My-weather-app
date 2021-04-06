@@ -163,10 +163,6 @@ input#input.form-control {
   text-decoration: none;
 }
 
-#fahrenheitButton {
-  text-decoration: none;
-}
-
 .active {
   color: rgba(57, 62, 91, 1);
   cursor: default;
