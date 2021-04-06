@@ -158,7 +158,7 @@ forecastHTML =
 forecastHTML +
 `
 
-    <div class="col-6 col-sm-3 col-md-3 col-lg timeslot">
+    <div class="col-6 col-sm-3 col-md-3 col-lg-3 timeslot">
         <p class="weather-forecast-day">${formatDay(forecastDay.dt)}</p>
         <img class="forecast-image" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
