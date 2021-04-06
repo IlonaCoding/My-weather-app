@@ -126,7 +126,7 @@ celsiusTemperatureForecast = Math.round(response.data.list[index].main.temp);
 forecastElement.innerHTML += `
 <div class="col-6 col-sm-3 col-md-3 col-lg timeslot">
 <p>${formatHours(time*1000)}</p>
-<img class="forecast-image" src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="weather-icon"/>
+<img class="forecast-image" src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="weather image of ${forecast.weather[0].description}" class="weather-icon"/>
 <p>${forecast.weather[0].description}</p>            
 <p>${Math.round(forecast.main.temp)}°</p>
 </div>`;
@@ -159,7 +159,7 @@ forecastHTML +
   <img class="forecast-image" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
-        alt=""
+        alt="weather image of ${forecastDay.weather[0].description}"
             class="weather-icon" />
   <p class="weather-forecast-description">${forecastDay.weather[0].description}</p>
   <p>
